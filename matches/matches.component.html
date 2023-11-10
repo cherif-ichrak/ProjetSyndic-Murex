@@ -40,38 +40,34 @@
                 </div>
                 <div class="modal-body">
                   <div>
-                    <input
-                      type="radio"
+                    <label for="options"> Type Match</label>
+                    <select
+                      class="form-control"
+                      id="options"
                       [(ngModel)]="selectedOption"
-                      [value]="'option1'"
-                    />
-                    Match Libre
-                    <input
-                      type="radio"
-                      [(ngModel)]="selectedOption"
-                      [value]="'option2'"
-                    />
-                    Match Compétition
+                    >
+                      <option selected value="option1">Match Libre</option>
+                      <option value="option2">Match Compétition</option>
+                    </select>
                   </div>
+                  <div class="wrapper wrapper-content animated fadeInDown">
+                    <div class="row">
+                      <div *ngIf="selectedOption === 'option1'">
+                        <form class="form-horizontal">
+                          <div class="form-row">
+                            <div class="col-md-6">
+                              <label>Adversaire</label>
+                              <select class="form-control">
+                                <option>Stade Tunisien</option>
+                                <option>Union Sportive de Ben Guerdane</option>
+                                <option>Club Sportif Sfaxien</option>
+                                <option>USMO</option>
+                                <option>ASA</option>
+                              </select>
+                            </div>
+                            <div class="col-md-3">
+                              <label>Date de Match</label>
 
-                  <div *ngIf="selectedOption === 'option1'">
-                    <form class="form-horizontal">
-                      <div class="form-row">
-                        <div class="col-md-6">
-                          <label>Adversaire</label>
-                          <select class="form-control">
-                            <option>Stade Tunisien</option>
-                            <option>Union Sportive de Ben Guerdane</option>
-                            <option>Club Sportif Sfaxien</option>
-                            <option>USMO</option>
-                            <option>ASA</option>
-                          </select>
-                        </div>
-                        <div class="col-md-6">
-                          <label>Date et Heure de Match</label>
-
-                          <div class="input-group">
-                            <div class="col-md-6 mb-3">
                               <input
                                 type="date"
                                 class="form-control"
@@ -80,7 +76,9 @@
                                 required
                               />
                             </div>
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-3">
+                              <label>Heure de Match</label>
+
                               <input
                                 type="time"
                                 class="form-control"
@@ -90,90 +88,90 @@
                               />
                             </div>
                           </div>
-                        </div>
-                      </div>
 
-                      <div class="form-row">
-                        <div class="col-md-6">
-                          <label> Lieu</label>
-
-                          <input
-                            type="text"
-                            placeholder="Lieu"
-                            class="form-control"
-                          />
-                        </div>
-                        <div class="col-md-6">
-                          <label>Domicile</label>
-
-                          <select class="form-control">
-                            <option selected>Local</option>
-                            <option>Exterieur</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      <div class="form-row">
-                        <div class="col-md-12">
-                          <label>Etat</label>
-
-                          <select class="form-control">
-                            <option selected>A Jouer</option>
-                            <option>Joué</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      <div class="row" class="text-right">
-                        <div class="modal-footer">
-                          <button
-                            type="button"
-                            class="btn btn-white btn-xs dropdown-toggle"
-                            data-dismiss="modal"
-                          >
-                            Annuler
-                          </button>
-                          <button
-                            type="button"
-                            class="btn btn-primary btn-xs dropdown-toggle"
-                          >
-                            Ajouter
-                          </button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-
-                  <div *ngIf="selectedOption === 'option2'">
-                    <form class="form-horizontal">
-                      <div class="form-row">
-                        <div class="col-md-12">
-                          <label>Compétition</label>
-
-                          <select class="form-control">
-                            <option selected>Championnat</option>
-                            <option>Champions League</option>
-                            <option>Coupe de la CAF</option>
-                            <option>Coupe</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="form-row">
-                        <div class="col-md-6">
-                          <label>Adversaire</label>
-                          <select class="form-control">
-                            <option>Stade Tunisien</option>
-                            <option>Union Sportive de Ben Guerdane</option>
-                            <option>Club Sportif Sfaxien</option>
-                            <option>USMO</option>
-                            <option>ASA</option>
-                          </select>
-                        </div>
-                        <div class="col-md-6">
-                          <label>Date et Heure de Match</label>
-
-                          <div class="input-group">
+                          <div class="form-row">
                             <div class="col-md-6">
+                              <label>Domicile</label>
+
+                              <select class="form-control">
+                                <option selected>Local</option>
+                                <option>Exterieur</option>
+                              </select>
+                            </div>
+                            <div class="col-md-6">
+                              <label> Lieu</label>
+
+                              <select class="form-control">
+                                <option selected>Lieu 1</option>
+                                <option>Lieu 2</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="form-row">
+                            <div class="col-md-12">
+                              <label>Etat</label>
+
+                              <select class="form-control">
+                                <option selected>A Jouer</option>
+                                <option>Joué</option>
+                                <option>Reporter</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="row" class="text-right">
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-white btn-xs dropdown-toggle"
+                                data-dismiss="modal"
+                              >
+                                Annuler
+                              </button>
+                              <button
+                                type="button"
+                                class="btn btn-primary btn-xs dropdown-toggle"
+                              >
+                                Ajouter
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                        <!-- Mettez ici les champs du formulaire pour l'Option 1 -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="wrapper wrapper-content animated fadeInDown">
+                    <div class="row">
+                      <div *ngIf="selectedOption === 'option2'">
+                        <form class="form-horizontal">
+                          <div class="form-row">
+                            <div class="col-md-12">
+                              <label>Compétition</label>
+
+                              <select class="form-control">
+                                <option selected>Championnat</option>
+                                <option>Champions League</option>
+                                <option>Coupe de la CAF</option>
+                                <option>Coupe</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="col-md-6">
+                              <label>Adversaire</label>
+                              <select class="form-control">
+                                <option>Stade Tunisien</option>
+                                <option>Union Sportive de Ben Guerdane</option>
+                                <option>Club Sportif Sfaxien</option>
+                                <option>USMO</option>
+                                <option>ASA</option>
+                              </select>
+                            </div>
+                            <div class="col-md-3">
+                              <label>Date de Match</label>
+
                               <input
                                 type="date"
                                 class="form-control"
@@ -182,7 +180,9 @@
                                 required
                               />
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
+                              <label>Heure de Match</label>
+
                               <input
                                 type="time"
                                 class="form-control"
@@ -192,58 +192,59 @@
                               />
                             </div>
                           </div>
-                        </div>
+
+                          <div class="form-row">
+                            <div class="col-md-6">
+                              <label>Domicile</label>
+
+                              <select class="form-control">
+                                <option selected>Local</option>
+                                <option>Exterieur</option>
+                              </select>
+                            </div>
+                            <div class="col-md-6">
+                              <label> Lieu</label>
+
+                              <select class="form-control">
+                                <option selected>Lieu 1</option>
+                                <option>Lieu 2</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="form-row">
+                            <div class="col-md-12">
+                              <label>Etat</label>
+
+                              <select class="form-control">
+                                <option selected>A Jouer</option>
+                                <option>Joué</option>
+                                <option>Reporter</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="row" class="text-right">
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-white"
+                                data-dismiss="modal"
+                              >
+                                Annuler
+                              </button>
+                              <button
+                                type="button"
+                                class="btn btn-primary btn-xs dropdown-toggle"
+                              >
+                                Ajouter
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                        <!-- Mettez ici les champs du formulaire pour l'Option 2 -->
                       </div>
-
-                      <div class="form-row">
-                        <div class="col-md-6">
-                          <label> Lieu</label>
-
-                          <input
-                            type="text"
-                            placeholder="Lieu"
-                            class="form-control"
-                          />
-                        </div>
-                        <div class="col-md-6">
-                          <label>Domicile</label>
-
-                          <select class="form-control">
-                            <option selected>Local</option>
-                            <option>Exterieur</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      <div class="form-row">
-                        <div class="col-md-12">
-                          <label>Etat</label>
-
-                          <select class="form-control">
-                            <option selected>A Jouer</option>
-                            <option>Joué</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      <div class="row" class="text-right">
-                        <div class="modal-footer">
-                          <button
-                            type="button"
-                            class="btn btn-white"
-                            data-dismiss="modal"
-                          >
-                            Annuler
-                          </button>
-                          <button
-                            type="button"
-                            class="btn btn-primary btn-xs dropdown-toggle"
-                          >
-                            Ajouter
-                          </button>
-                        </div>
-                      </div>
-                    </form>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -307,6 +308,9 @@
                         >Modifier</a
                       >
                     </li>
+                    <li>
+                      <a routerLink="FicheMatch">Details Match</a>
+                    </li>
                     <li><a href="#">Supprimer</a></li>
                   </ul>
                 </div>
@@ -340,6 +344,9 @@
                       <a data-toggle="modal" data-target="#myModalModifier"
                         >Modifier</a
                       >
+                    </li>
+                    <li>
+                      <a routerLink="FicheMatch">Details Match</a>
                     </li>
                     <li><a href="#">Supprimer</a></li>
                   </ul>
@@ -375,6 +382,9 @@
                         >Modifier</a
                       >
                     </li>
+                    <li>
+                      <a routerLink="FicheMatch">Details Match</a>
+                    </li>
                     <li><a href="#">Supprimer</a></li>
                   </ul>
                 </div>
@@ -400,38 +410,34 @@
               </div>
               <div class="modal-body">
                 <div>
-                  <input
-                    type="radio"
+                  <label for="options"> Type Match</label>
+                  <select
+                    class="form-control"
+                    id="options"
                     [(ngModel)]="selectedOption"
-                    [value]="'option1'"
-                  />
-                  Match Libre
-                  <input
-                    type="radio"
-                    [(ngModel)]="selectedOption"
-                    [value]="'option2'"
-                  />
-                  Match Compétition
+                  >
+                    <option selected value="option1">Match Libre</option>
+                    <option value="option2">Match Compétition</option>
+                  </select>
                 </div>
+                <div class="wrapper wrapper-content animated fadeInDown">
+                  <div class="row">
+                    <div *ngIf="selectedOption === 'option1'">
+                      <form class="form-horizontal">
+                        <div class="form-row">
+                          <div class="col-md-6">
+                            <label>Adversaire</label>
+                            <select class="form-control">
+                              <option>Stade Tunisien</option>
+                              <option>Union Sportive de Ben Guerdane</option>
+                              <option>Club Sportif Sfaxien</option>
+                              <option>USMO</option>
+                              <option>ASA</option>
+                            </select>
+                          </div>
+                          <div class="col-md-3">
+                            <label>Date de Match</label>
 
-                <div *ngIf="selectedOption === 'option1'">
-                  <form class="form-horizontal">
-                    <div class="form-row">
-                      <div class="col-md-6">
-                        <label>Adversaire</label>
-                        <select class="form-control">
-                          <option>Stade Tunisien</option>
-                          <option>Union Sportive de Ben Guerdane</option>
-                          <option>Club Sportif Sfaxien</option>
-                          <option>USMO</option>
-                          <option>ASA</option>
-                        </select>
-                      </div>
-                      <div class="col-md-6">
-                        <label>Date et Heure de Match</label>
-
-                        <div class="input-group">
-                          <div class="col-md-6 mb-3">
                             <input
                               type="date"
                               class="form-control"
@@ -440,7 +446,9 @@
                               required
                             />
                           </div>
-                          <div class="col-md-6 mb-3">
+                          <div class="col-md-3">
+                            <label>Heure de Match</label>
+
                             <input
                               type="time"
                               class="form-control"
@@ -450,72 +458,90 @@
                             />
                           </div>
                         </div>
-                      </div>
-                    </div>
 
-                    <div class="form-row">
-                      <div class="col-md-6">
-                        <label> Lieu</label>
-
-                        <input
-                          type="text"
-                          placeholder="Lieu"
-                          class="form-control"
-                        />
-                      </div>
-                      <div class="col-md-6">
-                        <label>Domicile</label>
-
-                        <select class="form-control">
-                          <option selected>Local</option>
-                          <option>Exterieur</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div class="form-row">
-                      <div class="col-md-12">
-                        <label>Etat</label>
-
-                        <select class="form-control">
-                          <option selected>A Jouer</option>
-                          <option>Joué</option>
-                        </select>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-
-                <div *ngIf="selectedOption === 'option2'">
-                  <form class="form-horizontal">
-                    <div class="form-row">
-                      <div class="col-md-12">
-                        <label>Compétition</label>
-
-                        <select class="form-control">
-                          <option selected>Championnat</option>
-                          <option>Champions League</option>
-                          <option>Coupe de la CAF</option>
-                          <option>Coupe</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="form-row">
-                      <div class="col-md-6">
-                        <label>Adversaire</label>
-                        <select class="form-control">
-                          <option>Stade Tunisien</option>
-                          <option>Union Sportive de Ben Guerdane</option>
-                          <option>Club Sportif Sfaxien</option>
-                          <option>USMO</option>
-                          <option>ASA</option>
-                        </select>
-                      </div>
-                      <div class="col-md-6">
-                        <label>Date et Heure de Match</label>
-
-                        <div class="input-group">
+                        <div class="form-row">
                           <div class="col-md-6">
+                            <label>Domicile</label>
+
+                            <select class="form-control">
+                              <option selected>Local</option>
+                              <option>Exterieur</option>
+                            </select>
+                          </div>
+                          <div class="col-md-6">
+                            <label> Lieu</label>
+
+                            <select class="form-control">
+                              <option selected>Lieu 1</option>
+                              <option>Lieu 2</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="form-row">
+                          <div class="col-md-12">
+                            <label>Etat</label>
+
+                            <select class="form-control">
+                              <option selected>A Jouer</option>
+                              <option>Joué</option>
+                              <option>Reporter</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="row" class="text-right">
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-white btn-xs dropdown-toggle"
+                              data-dismiss="modal"
+                            >
+                              Annuler
+                            </button>
+                            <button
+                              type="button"
+                              class="btn btn-primary btn-xs dropdown-toggle"
+                            >
+                              Modifier
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                      <!-- Mettez ici les champs du formulaire pour l'Option 1 -->
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapper wrapper-content animated fadeInDown">
+                  <div class="row">
+                    <div *ngIf="selectedOption === 'option2'">
+                      <form class="form-horizontal">
+                        <div class="form-row">
+                          <div class="col-md-12">
+                            <label>Compétition</label>
+
+                            <select class="form-control">
+                              <option selected>Championnat</option>
+                              <option>Champions League</option>
+                              <option>Coupe de la CAF</option>
+                              <option>Coupe</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="col-md-6">
+                            <label>Adversaire</label>
+                            <select class="form-control">
+                              <option>Stade Tunisien</option>
+                              <option>Union Sportive de Ben Guerdane</option>
+                              <option>Club Sportif Sfaxien</option>
+                              <option>USMO</option>
+                              <option>ASA</option>
+                            </select>
+                          </div>
+                          <div class="col-md-3">
+                            <label>Date de Match</label>
+
                             <input
                               type="date"
                               class="form-control"
@@ -524,7 +550,9 @@
                               required
                             />
                           </div>
-                          <div class="col-md-6">
+                          <div class="col-md-3">
+                            <label>Heure de Match</label>
+
                             <input
                               type="time"
                               class="form-control"
@@ -534,58 +562,59 @@
                             />
                           </div>
                         </div>
-                      </div>
+
+                        <div class="form-row">
+                          <div class="col-md-6">
+                            <label>Domicile</label>
+
+                            <select class="form-control">
+                              <option selected>Local</option>
+                              <option>Exterieur</option>
+                            </select>
+                          </div>
+                          <div class="col-md-6">
+                            <label> Lieu</label>
+
+                            <select class="form-control">
+                              <option selected>Lieu 1</option>
+                              <option>Lieu 2</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="form-row">
+                          <div class="col-md-12">
+                            <label>Etat</label>
+
+                            <select class="form-control">
+                              <option selected>A Jouer</option>
+                              <option>Joué</option>
+                              <option>Reporter</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="row" class="text-right">
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-white"
+                              data-dismiss="modal"
+                            >
+                              Annuler
+                            </button>
+                            <button
+                              type="button"
+                              class="btn btn-primary btn-xs dropdown-toggle"
+                            >
+                              Ajouter
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                      <!-- Mettez ici les champs du formulaire pour l'Option 2 -->
                     </div>
-
-                    <div class="form-row">
-                      <div class="col-md-6">
-                        <label> Lieu</label>
-
-                        <input
-                          type="text"
-                          placeholder="Lieu"
-                          class="form-control"
-                        />
-                      </div>
-                      <div class="col-md-6">
-                        <label>Domicile</label>
-
-                        <select class="form-control">
-                          <option selected>Local</option>
-                          <option>Exterieur</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div class="form-row">
-                      <div class="col-md-12">
-                        <label>Etat</label>
-
-                        <select class="form-control">
-                          <option selected>A Jouer</option>
-                          <option>Joué</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div class="row" class="text-right">
-                      <div class="modal-footer">
-                        <button
-                          type="button"
-                          class="btn btn-white btn-xs dropdown-toggle"
-                          data-dismiss="modal"
-                        >
-                          Annuler
-                        </button>
-                        <button
-                          type="button"
-                          class="btn btn-primary btn-xs dropdown-toggle"
-                        >
-                          Modifier
-                        </button>
-                      </div>
-                    </div>
-                  </form>
+                  </div>
                 </div>
               </div>
             </div>

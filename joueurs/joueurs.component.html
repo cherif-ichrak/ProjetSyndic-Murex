@@ -153,6 +153,73 @@
                       />
                     </div>
                   </div>
+                  <div class="form-row">
+                    <div class="col-md-12">
+                      <label>
+                        <input type="checkbox" class="i-checks" />
+                        &nbsp; &nbsp;Inactif
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-3">
+                      <input
+                        type="file"
+                        id="fileInput"
+                        style="display: none"
+                        (change)="onFileChange($event)"
+                      />
+                      <label for="fileInput" id="customLabel">
+                        Télécharger Photo</label
+                      >
+                      <img
+                        *ngIf="selectedImage"
+                        [src]="selectedImage"
+                        alt="Selected Image"
+                      />
+                    </div>
+                    <div class="col-md-3">
+                      <input
+                        type="file"
+                        id="fileInput"
+                        style="display: none"
+                        (change)="onFilePass($event)"
+                      />
+                      <label for="fileInput" id="customLabel"
+                        >Télécharger Passeport</label
+                      >
+                      <img
+                        *ngIf="selectedPass"
+                        [src]="selectedPass"
+                        alt="Selected Image"
+                      />
+                    </div>
+                    <div class="col-md-3">
+                      <input
+                        type="file"
+                        id="fileInput"
+                        style="display: none"
+                        (change)="onFileLicence($event)"
+                      />
+                      <label for="fileInput" id="customLabel"
+                        >Télécharger Licence</label
+                      >
+                      <img
+                        *ngIf="selectedLicence"
+                        [src]="selectedLicence"
+                        alt="Selected Image"
+                      />
+                    </div>
+                    <div class="col-md-3">
+                      <input type="file" (change)="onFileContrat($event)" />
+                      <img
+                        *ngIf="selectedImage"
+                        [src]="selectedImage"
+                        alt="Selected Image"
+                      />
+                    </div>
+                  </div>
+
                   <div class="row" class="text-right">
                     <div class="modal-footer">
                       <button
@@ -194,14 +261,30 @@
       <div class="row">
         <div class="col-lg-3">
           <div class="contact-box center-version">
-            <a href="profile.html">
+            <a>
               <img
                 alt="image"
                 class="img-circle"
                 src="assets/img/hassen.jpeg"
               />
 
-              <h3 class="m-b-xs"><strong>John Smith</strong></h3>
+              <h3 class="m-b-xs">
+                <strong>John Smith</strong
+                ><span class="product-Number">30 </span>
+                <span class="product-ONOFF">
+                  <label class="onoffswitch">
+                    <input
+                      type="checkbox"
+                      class="onoffswitch-checkbox"
+                      id="myonoffswitch"
+                    />
+                    <label class="onoffswitch-label" for="myonoffswitch">
+                      <span class="onoffswitch-inner"></span>
+                      <span class="onoffswitch-switch"></span>
+                    </label>
+                  </label>
+                </span>
+              </h3>
 
               <div class="font-bold">Milieu Droit</div>
               <address class="m-t-md">
@@ -225,14 +308,30 @@
         </div>
         <div class="col-lg-3">
           <div class="contact-box center-version">
-            <a href="profile.html">
+            <a>
               <img
                 alt="image"
                 class="img-circle"
                 src="assets/img/joueur.jpeg"
               />
 
-              <h3 class="m-b-xs"><strong>Alex Johnatan</strong></h3>
+              <h3 class="m-b-xs">
+                <strong>Alex Johnatan</strong>
+                <span class="product-Number"> 07 </span>
+                <span class="product-ONOFF">
+                  <label class="onoffswitch">
+                    <input
+                      type="checkbox"
+                      class="onoffswitch-checkbox"
+                      id="myonoffswitch"
+                    />
+                    <label class="onoffswitch-label" for="myonoffswitch">
+                      <span class="onoffswitch-inner"></span>
+                      <span class="onoffswitch-switch"></span>
+                    </label>
+                  </label>
+                </span>
+              </h3>
 
               <div class="font-bold">CEO</div>
               <address class="m-t-md">
@@ -254,14 +353,30 @@
         </div>
         <div class="col-lg-3">
           <div class="contact-box center-version">
-            <a href="profile.html">
+            <a>
               <img
                 alt="image"
                 class="img-circle"
                 src="assets/img/joueur.jpeg"
               />
 
-              <h3 class="m-b-xs"><strong>Monica Smith</strong></h3>
+              <h3 class="m-b-xs">
+                <strong>Monica Smith</strong>
+                <span class="product-Number"> 25 </span>
+                <span class="product-ONOFF">
+                  <label class="onoffswitch">
+                    <input
+                      type="checkbox"
+                      class="onoffswitch-checkbox"
+                      id="myonoffswitch"
+                    />
+                    <label class="onoffswitch-label" for="myonoffswitch">
+                      <span class="onoffswitch-inner"></span>
+                      <span class="onoffswitch-switch"></span>
+                    </label>
+                  </label>
+                </span>
+              </h3>
 
               <div class="font-bold">Marketing manager</div>
               <address class="m-t-md">
@@ -283,10 +398,26 @@
         </div>
         <div class="col-lg-3">
           <div class="contact-box center-version">
-            <a href="profile.html">
+            <a>
               <img alt="image" class="img-circle" src="assets/img/j6.jpeg" />
 
-              <h3 class="m-b-xs"><strong>Michael Zimber</strong></h3>
+              <h3 class="m-b-xs">
+                <strong>Michael Zimber</strong>
+                <span class="product-Number"> 03 </span>
+                <span class="product-ONOFF">
+                  <label class="onoffswitch">
+                    <input
+                      type="checkbox"
+                      class="onoffswitch-checkbox"
+                      id="myonoffswitch"
+                    />
+                    <label class="onoffswitch-label" for="myonoffswitch">
+                      <span class="onoffswitch-inner"></span>
+                      <span class="onoffswitch-switch"></span>
+                    </label>
+                  </label>
+                </span>
+              </h3>
 
               <div class="font-bold">Sales manager</div>
               <address class="m-t-md">
@@ -308,14 +439,30 @@
         </div>
         <div class="col-lg-3">
           <div class="contact-box center-version">
-            <a href="profile.html">
+            <a>
               <img
                 alt="image"
                 class="img-circle"
                 src="assets/img/hassen.jpeg"
               />
 
-              <h3 class="m-b-xs"><strong>Sandra Smith</strong></h3>
+              <h3 class="m-b-xs">
+                <strong>Sandra Smith</strong>
+                <span class="product-Number"> 28 </span>
+                <span class="product-ONOFF">
+                  <label class="onoffswitch">
+                    <input
+                      type="checkbox"
+                      class="onoffswitch-checkbox"
+                      id="myonoffswitch"
+                    />
+                    <label class="onoffswitch-label" for="myonoffswitch">
+                      <span class="onoffswitch-inner"></span>
+                      <span class="onoffswitch-switch"></span>
+                    </label>
+                  </label>
+                </span>
+              </h3>
 
               <div class="font-bold">Milieu Droit</div>
               <address class="m-t-md">
@@ -338,14 +485,30 @@
 
         <div class="col-lg-3">
           <div class="contact-box center-version">
-            <a href="profile.html">
+            <a>
               <img
                 alt="image"
                 class="img-circle"
                 src="assets/img/joueur.jpeg"
               />
 
-              <h3 class="m-b-xs"><strong>Janet Carton</strong></h3>
+              <h3 class="m-b-xs">
+                <strong>Janet Carton</strong>
+                <span class="product-Number"> 05 </span>
+                <span class="product-ONOFF">
+                  <label class="onoffswitch">
+                    <input
+                      type="checkbox"
+                      class="onoffswitch-checkbox"
+                      id="myonoffswitch"
+                    />
+                    <label class="onoffswitch-label" for="myonoffswitch">
+                      <span class="onoffswitch-inner"></span>
+                      <span class="onoffswitch-switch"></span>
+                    </label>
+                  </label>
+                </span>
+              </h3>
 
               <div class="font-bold">CFO</div>
               <address class="m-t-md">
@@ -368,14 +531,30 @@
 
         <div class="col-lg-3">
           <div class="contact-box center-version">
-            <a href="profile.html">
+            <a>
               <img
                 alt="image"
                 class="img-circle"
                 src="assets/img/joueur.jpeg"
               />
 
-              <h3 class="m-b-xs"><strong>Alex Johnatan</strong></h3>
+              <h3 class="m-b-xs">
+                <strong>Alex Johnatan</strong>
+                <span class="product-Number"> 12 </span>
+                <span class="product-ONOFF">
+                  <label class="onoffswitch">
+                    <input
+                      type="checkbox"
+                      class="onoffswitch-checkbox"
+                      id="myonoffswitch"
+                    />
+                    <label class="onoffswitch-label" for="myonoffswitch">
+                      <span class="onoffswitch-inner"></span>
+                      <span class="onoffswitch-switch"></span>
+                    </label>
+                  </label>
+                </span>
+              </h3>
 
               <div class="font-bold">CEO</div>
               <address class="m-t-md">
@@ -398,14 +577,30 @@
 
         <div class="col-lg-3">
           <div class="contact-box center-version">
-            <a href="profile.html">
+            <a>
               <img
                 alt="image"
                 class="img-circle"
                 src="assets/img/hassen.jpeg"
               />
 
-              <h3 class="m-b-xs"><strong>John Smith</strong></h3>
+              <h3 class="m-b-xs">
+                <strong>John Smith</strong>
+                <span class="product-Number"> 01 </span>
+                <span class="product-ONOFF">
+                  <label class="onoffswitch">
+                    <input
+                      type="checkbox"
+                      class="onoffswitch-checkbox"
+                      id="myonoffswitch"
+                    />
+                    <label class="onoffswitch-label" for="myonoffswitch">
+                      <span class="onoffswitch-inner"></span>
+                      <span class="onoffswitch-switch"></span>
+                    </label>
+                  </label>
+                </span>
+              </h3>
 
               <div class="font-bold">Milieu Droit</div>
               <address class="m-t-md">
@@ -427,14 +622,30 @@
         </div>
         <div class="col-lg-3">
           <div class="contact-box center-version">
-            <a href="profile.html">
+            <a>
               <img
                 alt="image"
                 class="img-circle"
                 src="assets/img/hassen.jpeg"
               />
 
-              <h3 class="m-b-xs"><strong>John Smith</strong></h3>
+              <h3 class="m-b-xs">
+                <strong>John Smith</strong>
+                <span class="product-Number"> 09 </span>
+                <span class="product-ONOFF">
+                  <label class="onoffswitch">
+                    <input
+                      type="checkbox"
+                      class="onoffswitch-checkbox"
+                      id="myonoffswitch"
+                    />
+                    <label class="onoffswitch-label" for="myonoffswitch">
+                      <span class="onoffswitch-inner"></span>
+                      <span class="onoffswitch-switch"></span>
+                    </label>
+                  </label>
+                </span>
+              </h3>
 
               <div class="font-bold">Milieu Droit</div>
               <address class="m-t-md">
@@ -456,14 +667,30 @@
         </div>
         <div class="col-lg-3">
           <div class="contact-box center-version">
-            <a href="profile.html">
+            <a>
               <img
                 alt="image"
                 class="img-circle"
                 src="assets/img/joueur.jpeg"
               />
 
-              <h3 class="m-b-xs"><strong>Alex Johnatan</strong></h3>
+              <h3 class="m-b-xs">
+                <strong>Alex Johnatan</strong>
+                <span class="product-Number"> 14 </span>
+                <span class="product-ONOFF">
+                  <label class="onoffswitch">
+                    <input
+                      type="checkbox"
+                      class="onoffswitch-checkbox"
+                      id="myonoffswitch"
+                    />
+                    <label class="onoffswitch-label" for="myonoffswitch">
+                      <span class="onoffswitch-inner"></span>
+                      <span class="onoffswitch-switch"></span>
+                    </label>
+                  </label>
+                </span>
+              </h3>
 
               <div class="font-bold">CEO</div>
               <address class="m-t-md">
@@ -485,14 +712,30 @@
         </div>
         <div class="col-lg-3">
           <div class="contact-box center-version">
-            <a href="profile.html">
+            <a>
               <img
                 alt="image"
                 class="img-circle"
                 src="assets/img/joueur.jpeg"
               />
 
-              <h3 class="m-b-xs"><strong>Monica Smith</strong></h3>
+              <h3 class="m-b-xs">
+                <strong>Monica Smith</strong>
+                <span class="product-Number"> 10 </span>
+                <span class="product-ONOFF">
+                  <label class="onoffswitch">
+                    <input
+                      type="checkbox"
+                      class="onoffswitch-checkbox"
+                      id="myonoffswitch"
+                    />
+                    <label class="onoffswitch-label" for="myonoffswitch">
+                      <span class="onoffswitch-inner"></span>
+                      <span class="onoffswitch-switch"></span>
+                    </label>
+                  </label>
+                </span>
+              </h3>
 
               <div class="font-bold">Marketing manager</div>
               <address class="m-t-md">
@@ -514,10 +757,26 @@
         </div>
         <div class="col-lg-3">
           <div class="contact-box center-version">
-            <a href="profile.html">
+            <a>
               <img alt="image" class="img-circle" src="assets/img/j6.jpeg" />
 
-              <h3 class="m-b-xs"><strong>Michael Zimber</strong></h3>
+              <h3 class="m-b-xs">
+                <strong>Michael Zimber</strong>
+                <span class="product-Number"> 02 </span>
+                <span class="product-ONOFF">
+                  <label class="onoffswitch">
+                    <input
+                      type="checkbox"
+                      class="onoffswitch-checkbox"
+                      id="myonoffswitch"
+                    />
+                    <label class="onoffswitch-label" for="myonoffswitch">
+                      <span class="onoffswitch-inner"></span>
+                      <span class="onoffswitch-switch"></span>
+                    </label>
+                  </label>
+                </span>
+              </h3>
 
               <div class="font-bold">Sales manager</div>
               <address class="m-t-md">
